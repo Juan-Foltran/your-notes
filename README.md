@@ -67,6 +67,25 @@ npm install
    ```
 
 
+## Exemplo do banco de dados 🎲
+```query
+create table users (
+  id serial primary key,
+  name varchar (150) not null,
+  email varchar (250) not null,
+  password text not null
+);
+
+create table notes (
+  id_note serial primary key,
+  id_user integer not null,
+  title varchar (150),
+  content text,
+
+  foreign key (id_user) references users (id)
+);
+```
+
 ## 🏃 Como Rodar
 
 ### 🐳 Com Docker (Recomendado)
